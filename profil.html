@@ -33,7 +33,7 @@
             <div id="belépés">
                 <h3 id="profil-text">Bejelentkezés</h3>
 
-                <form id="belepes-form" class="log-in" method="POST" enctype="multipart/form-data">
+                <form id="belepes-form" class="log-in" action="https://httpbin.org/post" method="POST" enctype="multipart/form-data">
                     <div class="inputok">
                         <div class="adat">
                             <label for="bej_email">E-mail cím</label>
@@ -56,7 +56,7 @@
 
                         <a href="profil.html" class="vissza">↩ Vissza a bejelentkezéshez</a>
 
-                        <form id="regisztacio-form"  method="POST" enctype="multipart/form-data">
+                        <form id="regisztacio-form"  method="POST" action="https://httpbin.org/post" enctype="multipart/form-data">
                             <div class="adat">
                                 <label for="vnev">Vezeték név</label>
                                 <input type="text" id="vnev" name="vnev">
