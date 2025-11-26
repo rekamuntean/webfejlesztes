@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profil beállítások</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <script src="JavaScript/profil.js" defer></script>
+
+    <link rel="icon" href="képek/8478-fork-and-knife-with-plate.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+
+<body id="profile-body">
+    <header class="nem_fooldal_header">
+        <nav>
+            <a href="index.html">Főoldal</a>
+            <a href="feltoltes.html">Recept feltöltése</a>
+        </nav>
+        <h1>Receptsarok</h1>
+    </header>
+
+    <main id="profile">
+        <h2>Profil</h2>
+
+        <div id="kezdőlap">
+            <div id="belépés">
+                <h3 id="profil-text">Bejelentkezés</h3>
+
+                <form id="belepes-form" class="log-in" method="POST" enctype="multipart/form-data">
+                    <div class="inputok">
+                        <div class="adat">
+                            <label for="bej_email">E-mail cím</label>
+                            <input type="email" id="bej_email" name="bej_email" placeholder="példa@minta.com">
+                            <div id="error-email" class="error-msg"></div>
+                        </div>
+                        <div class="adat">
+                            <label for="jelszó">Jelszó</label>
+                            <input type="password" id="jelszó" name="jelszó" placeholder="••••••••">
+                            <div id="error-jelszo" class="error-msg"></div>
+                        </div>
+                    </div>
+                    <button id="bejelentkezés" class="profil_button">Bejelentkezés</button>
+                </form>
+
+                <div class="sign-in">
+                    <p id="sign-in-text">Ha még nem hozott létre profilt, nyomja meg a <button class="profil_button" id="regisztráció">regisztráció</button> gombot.</p>
+
+                    <div id="sign-in-inputs" class="inaktiv">
+
+                        <a href="profil.html" class="vissza">↩ Vissza a bejelentkezéshez</a>
+
+                        <form id="regisztacio-form"  method="POST" enctype="multipart/form-data">
+                            <div class="adat">
+                                <label for="vnev">Vezeték név</label>
+                                <input type="text" id="vnev" name="vnev">
+                                <div id="error-vnev" class="error-msg"></div>
+                            </div>
+                            <div class="adat">
+                                <label for="knev">Keresztnév</label>
+                                <input type="text" id="knev" name="knev">
+                                <div id="error-knev" class="error-msg"></div>
+                            </div>
+                            <div class="adat">
+                                <label for="fnev">Felhasználó név</label>
+                                <input type="text" id="fnev" name="fnev">
+                                <div id="error-fnev" class="error-msg"></div>
+                            </div>
+                            <div class="adat">
+                                <label for="email">E-mail cím</label>
+                                <input type="email" id="email" name="email" placeholder="példa@minta.com">
+                                <div id="error-regiszt-email" class="error-msg"></div>
+                            </div>
+                            <div class="adat">
+                                <label for="email_meg">E-mail cím megerősítése</label>
+                                <input type="text" id="email_meg" name="email_meg" placeholder="példa@minta.com">
+                                <div id="error-email-megeros" class="error-msg"></div>
+                            </div>
+                            <div class="adat">
+                                <label for="reg_jelszo">Jelszó (min. 8 karakter)</label>
+                                <input type="password" id="reg_jelszo" name="reg_jelszo" placeholder="••••••••">
+                                <div id="error-regiszt-jelszo" class="error-msg"></div>
+                            </div>
+
+                            <button type="submit" id="regisztrálás" class="profil_button">Regisztráció</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <div id="belepve" class="inaktiv">
+                <p>Üdv <span id="aktiv_felh_nev"></span>!</p>
+                <p>Köszönjük, hogy regisztráltál/beléptél!</p>
+                <p>Mostantól meg tudsz osztani különféle recepteket, amiket már kipróbáltál, és ajánlanád másnak is.
+                    Használd egészséggel a weboldal által nyújtott lehetőségeket</p>
+                <p class="szlogen">Szeress, főzz, oszd!</p>
+                <a href="index.html"><button id="kijelentkezés" class="profil_button">Kijelentkezés</button></a>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <p class="footer szlogen">Szeress, főzz, oszd!</p>
+        <p>&copy; Receptsarok</p>
+    </footer>
+</body>
+
+</html>

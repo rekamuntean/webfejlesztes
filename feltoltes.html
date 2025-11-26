@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recept feltöltése</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+    <script src="JavaScript/feltoltes.js" defer></script>
+
+    <link rel="icon" href="képek/8478-fork-and-knife-with-plate.png">
+
+</head>
+
+<body id="feltoltes-body">
+
+    <header class="nem_fooldal_header">
+        <nav>
+            <a href="profil.html">Profil</a>
+            <a href="index.html">Főoldal</a>
+        </nav>
+        <h1>Receptsarok</h1>
+    </header>
+
+    <main id="upload">
+        <h2>Recept Feltöltése</h2>
+
+        <div id="feltoltes_bejelentkezes">
+            <p>A receptfeltöltéshez bejelentkezés szükséges!</p>
+            <p>Kérem lépjen be vagy regsiztráljon, a <a id="felt_reg_button" class="profil_button"
+                    href="profil.html">Profil</a> menüpontban</p>
+        </div>
+
+        <div id="div_upload" class="inaktiv">
+            <form id="upload-form" enctype="multipart/form-data" method="POST">
+                <div class="adat">
+                    <label for="upload-title">Recept-cím:</label>
+                    <input type="text" id="upload-title" name="upload-title">
+                    <div id="error-cim" class="error-msg"></div>
+                </div>
+                <div class="adat">
+                    <p>Kategória</p>
+                    <div id="kivalasztas">
+                        <input type="radio" id="upl_leves" value="Leves" name="kat_kivalaszt" checked>
+                        <label for="upl_leves">Leves</label><br>
+                        <input type="radio" id="upl_foetel" value="Főétel" name="kat_kivalaszt">
+                        <label for="upl_foetel">Főétel</label><br>
+                        <input type="radio" id="upl_desszert" value="Desszert" name="kat_kivalaszt">
+                        <label for="upl_desszert">Desszert</label><br>
+                        <div id="error-kivalasztas" class="error-msg"></div>
+                    </div>
+                </div>
+                <div class="adat" class="mas">
+                    <label for="upload-file">Kép feltöltése fájlból</label>
+                    <input type="file" id="upload-file" name="upload-file" accept="image/png, image/jpeg">
+                    <div id="error-kep" class="error-msg"></div>
+                </div>
+                <div class="adat">
+                    <label for="megadott_adag">Adag</label>
+                    <input type="number" id="megadott_adag" name="megadott_adag">
+                    <div id="error-adag" class="error-msg"></div>
+                </div>
+                <div class="adat">
+                    <label for="ingerdient">Hozzávalók</label>
+                    <textarea rows="5" id="ingredient"></textarea>
+                    <div id="error-hozzavalo" class="error-msg"></div>
+
+                </div>
+                <div class="adat">
+                    <label for="upload-text">Elkészítési javaslat</label>
+                    <textarea rows="7" id="upload-text"></textarea>
+                    <div id="error-elkeszites" class="error-msg"></div>
+                </div>
+
+                <button id="upload-recipe" type="submit" class="profil_button">Recept mentése</button>
+            </form>
+        </div>
+    </main>
+    <footer>
+        <p class="footer szlogen">Szeress, főzz, oszd!</p>
+        <p>&copy; Receptsarok</p>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Receptsarok</title>
+
+    <link rel="icon" href="képek/8478-fork-and-knife-with-plate.png">
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <script src="JavaScript/slider.js" defer></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet">
+</head>
+
+<body id="main-page">
+
+    <header class="főoldal">
+        <h1>Receptsarok</h1>
+        <nav>
+            <a href="főoldal.html">Főoldal</a>
+            <a href="profil.html">Profil</a>
+            <a href="feltoltes.html">Recept feltöltése</a>
+        </nav>
+    </header>
+
+    <main>
+
+        <div id="keresés">
+            <h2>Főoldal</h2>
+            <div class="search-bar">
+                <input type="search" id="keresés_bevitel" placeholder="Keresés...">
+                
+                <nav>
+                    <a href="#leves">Levesek</a>
+                    <a href="#foetel">Főételek</a>
+                    <a href="#desszert">Desszertek</a>
+                </nav>
+            </div>
+        </div>
+
+        <!-- LEVESEK -->
+        <div id="leves" class="container">
+            <hr>
+            <h3><a href="leves.html">Levesek</a></h3>
+            
+            <button class="nav-button bal" data-target="leves">&lt;</button>
+            <button class="nav-button jobb" data-target="leves">&gt;</button>
+
+            <div class="slider" data-category="leves">
+
+                <!-- aktiv hozzáadva -->
+                <a class="recept_kat active" href="leves.html#sutotokkremleves">
+                    <img src="képek/sutotokkremleves.jpg" alt="Sütőtökkrémleves">
+                    <p class="recept_nev">Sütőtökkrémleves</p>
+                </a>
+                
+                <a class="recept_kat" href="leves.html#paradicsomleves">
+                    <img src="képek/paradicsomleves.jpg" alt="Paradicsomleves">
+                    <p class="recept_nev">Paradicsomleves</p>
+                </a>
+
+                <a class="recept_kat" href="leves.html#brokkolikremleves">
+                    <img src="képek/brokkolikremleves.jpg" alt="Brokkolikrémleves">
+                    <p class="recept_nev">Brokkolikrémleves</p>
+                </a>
+
+            </div>
+        </div>
+
+        <!-- FŐÉTELEK -->
+        <div id="foetel" class="container">
+            <hr>
+            <h3><a href="főétel.html">Főételek</a></h3>
+            
+            <button class="nav-button bal" data-target="foetel">&lt;</button>
+            <button class="nav-button jobb" data-target="foetel">&gt;</button>
+
+            <div class="slider" data-category="foetel">
+                
+                <!-- ACTIVE class hozzáadva -->
+                <a class="recept_kat active" href="főétel.html#rantottcsirkemell">
+                    <img src="képek/rantottcsirkemell.jpg" alt="Rántott csirkemell">
+                    <p class="recept_nev">Rántott csirkemell</p>
+                </a>
+
+                <a class="recept_kat" href="főétel.html#milanoimakaroni">
+                    <img src="képek/milanoi.jpg" alt="Milánói-makaróni">
+                    <p class="recept_nev">Milánói-makaróni</p>
+                </a>
+
+                <a class="recept_kat" href="főétel.html#tejfoloscsirkeragu">
+                    <img src="képek/csirkeragu.jpg" alt="Paprikás csirke">
+                    <p class="recept_nev">Tejfölös csirkeragu</p>
+                </a>
+            </div>
+        </div>
+
+        <!-- DESSZERTEK -->
+        <div id="desszert" class="container">
+            <hr>
+            <h3><a href="desszert.html">Desszertek</a></h3>
+            
+            <button class="nav-button bal" data-target="desszert">&lt;</button>
+            <button class="nav-button jobb" data-target="desszert">&gt;</button>
+
+            <div class="slider" data-category="desszert">
+
+                <!-- ACTIVE class hozzáadva (Brownie-t feltételezve elsőként) -->
+                <a class="recept_kat active" href="desszert.html#brownie">
+                    <img src="képek/brownie.jpg" alt="Brownie">
+                    <p class="recept_nev">Brownie</p>
+                </a>
+                
+                <a class="recept_kat" href="desszert.html#palacsinta">
+                    <img src="képek/palacsinta.webp" alt="Palacsinta">
+                    <p class="recept_nev">Palacsinta</p>
+                </a>
+
+                <a class="recept_kat" href="desszert.html#gyumolcsoskehely">
+                    <img src="képek/gyumolcsoskehely.JPG" alt="Gyümölcsös kehely">
+                    <p class="recept_nev">Gyümölcsös kehely</p>
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p class="footer szlogen">Szeress, főzz, oszd!</p>
+        <p>&copy; Receptsarok</p>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,732 @@
+body {
+
+    margin: 0;
+    font-family: "Raleway", sans-serif;
+    background-color: #ffffff;
+    color: #000000;
+    box-sizing: border-box;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+html {
+    height: 100%;
+}
+
+/* footer alulra helyezése */
+main {
+    flex-grow: 1;
+}
+
+/*--------------FŐOLDAL--------------*/
+
+.főoldal {
+    background-color: #E4D6C5;
+    color: white;
+    padding: 15px 0 0;
+    text-align: center;
+}
+
+footer {
+    margin: 0;
+    margin-top: 20px;
+    background-color: #E4D6C5;
+    color: white;
+    text-align: center;
+}
+
+footer p {
+    padding: 15px 0;
+    margin: 0;
+}
+
+.főoldal nav {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.főoldal a {
+    text-decoration: none;
+    background-color: #c5b5a2;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    justify-content: center;
+}
+
+.főoldal a:hover {
+    background-color: #333;
+    color: #E4D6C5;
+}
+
+#main-page > main {
+    display: flex;
+    flex-direction: column;
+
+}
+
+#keresés {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 30px;
+}
+
+
+#main-page input {
+    border: 1px solid #8D978E;
+    border-radius: 5px;
+}
+
+#main-page input:focus {
+    outline: 1px solid #6a726b;
+}
+
+.search-bar {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.search-bar nav{
+    display: flex;
+    gap: 3px;
+    flex-wrap: wrap;
+
+}
+
+.search-bar a {
+    text-decoration: none;
+    padding: 4px 3.5px;
+    background-color: #8D978E;
+    border-radius: 6px;
+    color: white;
+    font-size: 0.7rem;
+}
+
+.container {
+    padding: 10px 20px;
+    position: relative;
+}
+
+.container h3 {
+    margin-bottom: 5px;
+}
+
+.container h3 a {
+    text-decoration: none;
+    color: black;
+    margin-bottom: 10px;
+}
+
+.container hr {
+    border: 0;
+    height: 1px;
+    background: #8D978E;
+    margin: 20px 0;
+}
+
+.slider {
+    position: relative;
+    overflow: hidden; /* elrejti a nem .aktív elemeket */
+    width: 100%;
+    min-height: 250px;
+}
+
+.recept_kat {
+    display: none; 
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    flex-direction: column;
+    text-align: center;
+    text-decoration: none;
+    flex-wrap: wrap;
+}
+
+.recept_kat.active {
+    display: flex; 
+}
+
+.recept_kat img {
+    width: 95%;
+    max-height: 180px;
+    object-fit: cover;  /*különben elnyújtaná a képet*/
+    border-radius: 6px;
+    margin: 10px auto;
+}
+
+.recept_nev {
+    font-weight: bold;
+    color: #546954;
+    font-size: 1.1em;
+}
+
+.nav-button {
+    position: absolute;
+    top: 53%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5); /*0.5 átlátszóság*/
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 1; /*a boxon beüli rétegek*/
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    font-size: 1.2em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav-button:hover {
+    background: rgba(0, 0, 0, 0.8);
+}
+
+.bal {
+    left: 10px; /*abs poz*/
+}
+
+.jobb {
+    right: 10px;    /*abs poz*/
+}
+
+
+/*-------------RECEPTEK-------------*/
+
+.kategoriak {
+    margin: 0;
+}
+
+.kategoriak-header {
+    padding: 10px;
+    background-color: #E4D6C5;
+}
+
+.kategoriak-header a {
+    text-decoration: none;
+    color: white;
+    font-size: 0.8rem;
+    padding: 5px 4px;
+    border: #546954;
+    border-radius: 6px;
+    font-weight: bold;
+}
+
+.kategoriak-header a:hover {
+    background-color: #c5b5a2;
+    cursor: pointer;
+}
+
+.kategoriak h1 {
+    margin: 10px;
+}
+
+.receptek {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    margin: 10px;
+}
+
+.receptek span {
+    font-weight: bold;
+}
+
+
+.kategoriak img {
+    width: 70%;
+    height: auto;
+    border-radius: 6px;
+}
+
+.recept {
+    background-color: #D3DBD4;
+    border-radius: 6px;
+    box-shadow: 1px 1px #546954;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    text-align: center;
+}
+
+.recept h2 {
+    margin-top: 0;
+    color: #546954;
+}
+
+.recept img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.hozzavalok, .elkeszites {
+    text-align: left;
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.hozzavalok h3, .elkeszites h3 {
+    color: #8D978E;
+    border-bottom: 2px solid #D3DBD4;
+    padding-bottom: 5px;
+}
+
+.szamolas {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    flex-wrap: wrap;
+}
+
+.szamolas p {
+    margin: 0;
+    font-weight: bold;
+    color: #546954;
+}
+
+.gombok {
+    margin-left: 10px;
+    display: flex;
+    gap: 5px;
+    flex-wrap: wrap;
+}
+
+.gombok button {
+    background-color: #546954;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 100%;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.gombok button:hover {
+    background-color: #3e8e41;
+}
+
+.recept ul {
+    list-style: disc;
+    padding-left: 20px;
+    margin-top: 5px;
+}
+
+.recept ol {
+    padding-left: 20px;
+    margin-top: 5px;
+}
+
+.recept li {
+    margin-bottom: 5px;
+}
+
+.recept li span {
+    font-weight: bold;
+}
+
+.recept a {
+    text-decoration: none;
+    color: #546954;
+    font-weight: bold;
+    margin-top: 10px;
+    display: block;
+    text-align: right;
+}
+
+
+
+/*--------------PROFIL---------------*/
+
+.nem_fooldal_header {
+    background-color: #E4D6C5;
+}
+
+.nem_fooldal_header nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 10px;
+    background-color: #c5b5a2
+}
+
+.nem_fooldal_header a {
+    text-decoration: none;
+    color: white;
+;
+}
+
+.nem_fooldal_header a:hover {
+    font-weight: bold;
+}
+
+.nem_fooldal_header h1 {
+    text-align: center;
+    color: white;
+    padding-bottom: 20px;
+    margin-bottom: 0;
+}
+
+#profile {
+    padding: 10px;
+}
+
+.log-in {
+    display: flex;
+    align-items: end;
+    justify-content: start;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.inputok {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    width: 60%;
+    flex-wrap: wrap;
+}
+
+.belépő_gombok {
+    display: flex;
+    gap: 4px;
+}
+
+.sign-in > p {
+    font-size: 0.67rem;
+    margin-top: 35px;
+}
+
+.profil_button {
+    background-color: #E4D6C5;
+    border: 1px solid #E4D6C5;
+    border-radius: 4px;
+    margin-top: 7px;
+}
+
+.profil_button:hover {
+    cursor: pointer;
+    border: 1px solid #c5b5a2;
+}
+
+.profil_button:active {
+    background-color: #c5b5a2;
+}
+
+#regisztráció {
+    font-size: 0.70rem;
+}
+
+#regisztrálás {
+    width: 100%;
+}
+
+.inaktiv {
+    display: none;
+}
+
+.inaktiv.aktiv_regisztralas {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 75%;
+}
+
+.inaktiv.aktiv_belepes {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.vissza {
+    text-decoration: none;
+    color: white;
+    background-color: #E4D6C5;
+    border-radius: 4px;
+    padding: 2px;
+    font-size: 0.7rem;
+}
+
+.adat {
+    display: flex;
+    flex-direction: column;
+    padding: 10px 0 0 0;
+}
+
+textarea {
+    margin: 5px 5px 0 0;
+}
+
+#ingredient {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+label, .adat p {
+    font-size: 0.85rem;
+    margin-bottom: 3px;
+    margin-top: 0;
+}
+
+
+#aktiv_felh_nev {
+    font-weight: bold;
+}
+
+.szlogen {
+    color: #6a726b;
+}
+
+.szlogen.footer {
+    color: white;
+    padding-bottom: 0;
+    font-size: 0.8rem;
+}
+
+#belepve a {
+    text-decoration: none;
+    color: #000000;
+}
+
+/*-------------RECEPT FELTÖLTÉS---------------*/
+
+#felt_reg_button {
+    text-decoration: none;
+    color: #000000;
+    padding: 1px;
+    font-size: smaller
+}
+
+#upload {
+    margin: 10px;
+}
+
+.inaktiv.aktiv_upload {
+    display: block;
+    width: 70%;
+}
+
+#megadott_adag {
+    width: 10%;
+}
+
+#upload-title {
+    width: 50%;
+}
+
+#feltolt_bej_button, #upload-recipe {
+    margin-top: 10px;
+}
+
+
+/*-----------VALIDÁLÁS--------------*/
+
+.error-msg {
+     color: #dc3545; 
+     font-size: 0.7rem; 
+     margin-top: 2px;
+}
+
+.input-error {
+    border-color: #dc3545;
+    border-radius: 4px;
+    background-color: #fff8f8;
+}
+
+/*----------------MEDIA QUERY----------------*/
+
+@media (min-width: 40em) {
+
+    /*-------FŐOLDAL--------*/
+    .főoldal {
+        display: flex;
+        justify-content: space-between;
+        padding: 0;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+
+    #keresés {
+        flex-direction: row;
+    }
+
+    .főoldal h1 {
+        padding: 10px;
+    }
+
+    .container {
+        min-width: 65%;
+        margin: 0 auto;
+    }
+
+    /*-------RECEPTEK-------*/
+    .tablet {
+        display: flex;
+        gap: 30px;
+        align-items: center;
+    }
+
+    .recept img {
+        max-width: 50%;
+    }
+
+    .recept {
+        padding: 20px;
+        margin: 10px;
+    }
+
+    /* PALACSINTÁVAL BAJ VAN!!!!!! */
+
+    /*-------RECEPT FELTÖLTÉS-------*/
+
+    #upload {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+
+    #feltoltes_bejelentkezes p {
+        text-align: center;
+    }
+
+    /*--------PROFIL--------*/
+    
+    .log-in {
+        justify-content: start;
+        gap: 20px;
+    }
+
+    .inputok {
+        width: 40%;
+    }
+}
+
+@media (min-width: 60em) {
+
+    /*-------FŐOLDAL-------*/
+    .főoldal nav {
+        flex-direction: row;
+        flex: 2;
+        justify-content: space-evenly;
+        background-color: #c5b5a2;
+        align-self: stretch;
+    }
+
+    .főoldal a {
+        padding: 40px;
+        flex: 1;
+        align-self: stretch;
+    }
+
+    .főoldal h1 {
+        flex: 1;
+        padding: 0;
+    }
+
+    #kezdőlap {
+        width: 60%;
+    }
+
+
+    /*-------PROFIL-------*/
+
+    #profile {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+
+    #belépés {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+
+    .log-in {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        width: 50%;
+    }
+
+    #belepes-form {
+    width: 75%;
+    }
+
+    .inputok {
+        width: 100%;
+    }
+
+    .sign-in {
+        width: 75%;
+    }
+
+    #sign-in-text {
+        text-align: center;
+    }
+
+    .inaktiv.aktiv_regisztralas {
+        max-width: 100%;
+    }
+
+    #profil-text {
+        text-align: center;
+    }
+
+
+    /*-------RECEPTEK-------*/
+
+    .tablet {
+        flex-direction: column;
+    }    
+
+    .recept {
+        max-width: 28%;
+    }
+
+    .receptek {
+        flex-wrap: wrap;
+        align-items: start;
+        gap: 0;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+    .container h3 {
+        text-align: center;
+    }
+
+    .recept_kat img {
+        width: 50%;
+    }
+
+    .jobb {
+        right: 20%;
+    }
+
+    .bal {
+        left: 20%;
+    }
+
+    .kategoriak h1 {
+        text-align: center;
+        padding: 15px 0 25px 0;
+    }
+}
