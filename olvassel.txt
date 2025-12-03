@@ -1,0 +1,35 @@
+Készítette: Muntean Réka
+URL: 
+https://rekamuntean.github.io/webfejlesztes/index.html
+
+
+Leírás:
+Ez egy olyan oldal, ahova receptek vannak feltöltve külön kategorizálva (levesek, főételek, desszertek). Minden kategóriába 3-3 recept van megjelenítve szemléletesen. Ezek a receptek segítik a felhasználót a hozzávalók és a lépésről lépésre feljegyző elkészítés segítségével a tökéletes főzés végrehajtását. További funkcióval az adagokat is lehet növelni és csökkenteni tetszés szerint. Végezetül a legkülönlegesebb beállítás, hogy a felhasználó bejelentkezhet, illetve regisztrálhat (szemléletesen) az oldalra, majd ez után elérhető lesz számára a recept feltöltés funkció. (A profil adatok és a recept ténylegesen nem kerül mentésre a rendszerben!)
+
+
+JavaScript kódok működése:
+
+Főoldalhoz tartozó (index.html): (JavaScript/slider.js)
+Ez a kód a receptek körbeforgásos váltakozását biztosítja a megfelelő nyíl-gombok lenyomásával.
+FONTOS, hogy a Keresést szolgáló search input csak szemléletes!
+A slider osztály szolgál a 3 kép és cím egy tömbbe fogására, amit a kódban egy tömbbé alakít (Array.from()). Ennek a tömb segítségével az indexeire hivatkozva veszi le és teszi fel az aktív osztályt, ezzel váltakoztatja a megjelenő recept képet és a hozzá tartozó címet.
+
+Receptekhez tartozó: (JavaScript/script.js)
+Ez a kód az adagok megváltoztatásával a hozzávalók mértékét megfelelő arányban alakítja. 
+A kód az arányt kiszámolja az eredeti és a módoított adag hányadával. A html fájlokban (leves.hatml,főétel,html, desszer.html) a hozzávalók felsorolásánál (ul > li) az <li> tagek kapnak egy "data-base" attribútumot, ami a js kódban a megkeresésükért szolgál, majd külön-külön a "data-base" attribútumok sorát felszeleteli és az első tagot kiszedi (ez a hozzávaló mennyisége). Ezt a mennyiséget szorozza meg az elsőként kiszámolt aránnyal. 
+
+Profilhoz tartotó: (JavaScript/profil.js)
+Ez a kód egyrészt a bejelentkezés és a regisztráció inputjait vizsgálja és validálja, másrészt a regisztrációs felületet megjeleníti (ugyan abban a html kódban) a "regisztráció" gombra kattintással, harmadrészt a belépést követően elmenti a aktivitást, ezzel új lehetőségeket biztosít a felhasználó számára (a recept feltöltése).
+A validáció minden adott inputra megfelelő jóváhagyást hajt végre. Ha minden bemenet megfelel az elvárásoknak, belépteti a felhasználót.
+A regisztrációs ablakot egy gombra kattintással lehet elérni. Ilyenkor a kód a log-in osztályt inaktívvá, és a sign-in osztályt aktívvá teszi.
+A belépett felhasználót a "felhasznaloBelepve" elemmel menti el a localStorage-ba.
+
+Recept feltöltéshez tartozó: (JavaScript/feltoltes.js)
+Ez a kód egy új recept feltöltésének a szimulált elmentését biztosítja.
+A bejelentkezési státusz lekérdezi a rendszerből, ha nincs bejelentkezve, megkéri a felhasználót hogy tegye meg ezt a lépést, ha be van jelentkezve, akkor megjeleníti a recept feltöltés inputjait.
+Egy validálás is fut le a kódban, ami biztosítja, hogy az összes input/textarea kitöltésre kerüljön feltöltés előtt. A feltöltés mentésének szimulálására egy alert üzenőfal megjelenítése kerül, ha sikeres a validáció.
+
+
+Használt betűtípus:
+Raleway
+
